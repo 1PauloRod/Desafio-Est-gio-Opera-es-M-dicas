@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.screen{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 95vh;
+}
+
+.resultado-box {
+    max-width: 400px;
+    height: 50px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.card {
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+}
+
+.tfg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+input[type="number"], button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="number"]:focus, button:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.sexo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+}
+
+.sexo p {
+    font-size: 18px;
+    margin: 0; 
+    font-weight: bold;
+    color: #333;
+}
+
+.sexo label {
+    display: flex;
+    align-items: center;
+    gap: 10px;  
+    font-size: 16px;
+}
+
+.sexo input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+.etnia {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.etnia p {
+    font-size: 18px;
+    margin: 0; 
+    font-weight: bold;
+    color: #333;
+}
+
+.etnia select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; 
+}
+
+.etnia select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.estagio {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.G1 {
+    background-color: #4CAF50;  
+}
+
+.G2 {
+    background-color: #8BC34A;  
+}
+
+.G3a {
+    background-color: #FFEB3B;  
+}
+
+.G3b {
+    background-color: #FF9800;  
+}
+
+.G4 {
+    background-color: #FF5722;  
+}
+
+.G5 {
+    background-color: #F44336;  
+}
+
+.colesterol p{
+    font-size: 18px;
+    margin: 0; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.colesterol-input{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.colesterol input{
+    width: 150px;
+    display: flex;
+}
+
+.pas p{
+    font-size: 18px;
+    margin: 0; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.pas{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.pas-tratada {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pas-tratada p {
+    font-size: 18px;
+    margin: 0; 
+    font-weight: bold;
+    color: #333;
+}
+
+.pas-tratada select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; 
+}
+
+.pas-tratada select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.fumante {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fumante p {
+    font-size: 18px;
+    margin: 0; 
+    font-weight: bold;
+    color: #333;
+}
+
+.fumante select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; 
+}
+
+.fumante select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.diabetes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.diabetes p {
+    font-size: 18px;
+    margin: 0; 
+    font-weight: bold;
+    color: #333;
+}
+
+.diabetes select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; 
+}
+
+.diabetes select:focus {
+    border-color: #007bff;
+    outline: none;
+}

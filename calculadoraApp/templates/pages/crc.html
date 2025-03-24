@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title> crc</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/tfg.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="screen">
+    <div class="card">
+        <form class="tfg-form" method="POST" action={% url "crc_calculator" %}>
+            {% csrf_token %}
+            <h2>Calculadora Risco Cardiovascular</h2>
+            <input name="idade" type="number" placeholder="idade" required>
+            
+            <div class="sexo">
+                <p>Sexo:</p>
+                <label>
+                    <input type="radio" name="sexo" value="masculino"> Masculino
+                </label><br>
+
+                <label>
+                    <input type="radio" name="sexo" value="feminino"> Feminino
+                </label><br>
+            </div>
+            
+            <div class="colesterol">
+                <p>Colesterol (mg/dL)</p>
+                <div class="colesterol-input">
+                    <input name="colesterol-total" type="number" placeholder="colesterol total" step="any" required>
+                    <input name="hdl" type="number" placeholder="hdl" step="any" required>
+                </div>
+            </div>
+
+            <div class="pas">
+                <p>Pressão Arterial Sistólica (mm/Hg)</p>
+                    <input name="pas" type="number" placeholder="pas" step="any" required>
+            </div>
+
+            <div class="pas-tratada">
+                <p>Pas Tratada?</p>
+                <select name="pas-tratada">
+                    <option value="selecione">Selecione</option>
+                    <option value="true">Sim</option>
+                    <option value="false">Não</option>
+                </select>
+            </div>
+
+            <div class="fumante">
+                <p>É fumante?</p>
+                <select name="fumante">
+                    <option value="selecione">Selecione</option>
+                    <option value="true">Sim</option>
+                    <option value="false">Não</option>
+                </select>
+            </div>
+
+            <div class="diabetes">
+                <p>Possui diabetes?</p>
+                <select name="diabetes">
+                    <option value="selecione">Selecione</option>
+                    <option value="true">Sim</option>
+                    <option value="false">Não</option>
+                </select>
+            </div>
+            <button id="btn-calcular">Calcular</button>
+        </form>
+    </div>
+   <div class="resultado-box">
+    {% if resultado %}
+        <h3>Resultado de Risco:</h3>
+        <p>{{ resultado.classificacao }}</p>
+        <p>risco estimado para os próximos 10 anos: {{ resultado.percentual }}% </p>
+        </div>
+    {% endif %}
+   </div>
+    
+</div>
+{% endblock %}

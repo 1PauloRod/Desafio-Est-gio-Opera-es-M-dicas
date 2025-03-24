@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    <title>TFG</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/tfg.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="screen">
+    <div class="card">
+        <form class="tfg-form" method="POST" action={% url "tfg_calculator" %}>
+            {% csrf_token %}
+            <h2>Calculadora CKD-EPI</h2>
+            <input name="idade" type="number" placeholder="idade" required>
+            
+            <div class="sexo">
+                <p>Sexo:</p>
+                <label>
+                    <input type="radio" name="sexo" value="masculino"> Masculino
+                </label><br>
+
+                <label>
+                    <input type="radio" name="sexo" value="feminino"> Feminino
+                </label><br>
+            </div>
+            
+            <div class="etnia">
+                <p>Etnia:</p>
+                <select name="etnia">
+                    <option value="branco">Branco</option>
+                    <option value="pardo">Pardo</option>
+                    <option value="preto">Preto</option>
+                    <option value="amarelo">Amarelo</option>
+                    <option value="indigena">Indígena</option>
+                </select>
+            </div>
+
+            <input name="creatinina" type="number" placeholder="Creatina Sérica" required step="any">
+            <button id="btn-calcular">Calcular</button>
+        </form>
+    </div>
+   <div class="resultado-box">
+    {% if resultado %}
+        <h3>Resultado do Cálculo:</h3>
+        <div class="estagio {{ resultado.Estagio }}">
+            <p><strong>Estágio:</strong> {{ resultado.Estagio }}</p>
+            <p><strong>Diagnóstico:</strong> {{ resultado.Diagnostico }}</p>
+        </div>
+    {% endif %}
+   </div>
+    
+</div>
+{% endblock %}
+
+
